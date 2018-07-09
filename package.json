@@ -1,0 +1,19 @@
+{
+  "name": "learnning",
+  "version": "1.0.0",
+  "description": "data stracture & design pattern & algorithm & stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "practice"
+  ],
+  "author": "jsm1003",
+  "license": "ISC",
+  "devDependencies": {
+    "tslint": "^5.10.0",
+    "tslint-microsoft-contrib": "^5.0.3",
+    "typescript": "^2.9.2"
+  }
+}
