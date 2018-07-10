@@ -2,7 +2,7 @@
  * List
  */
 // tslint:disable:no-any
-class List<T> {
+export default class List<T> {
   private listSize: number = 0;
   private dataStore: T[] = [];
   public position: number = 0;
