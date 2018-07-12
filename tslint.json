@@ -29,13 +29,7 @@
       "check-else",
       "check-whitespace"
     ],
-    "quotemark": [
-      true,
-      "single",
-      "jsx-double",
-      "avoid-escape",
-      "avoid-template"
-    ],
+    "quotemark": [true, "single", "jsx-double", "avoid-escape", "avoid-template"],
     "trailing-comma": [true, "all"],
     "semicolon": [true, "always", "ignore-bound-class-methods"],
     "whitespace": [
@@ -81,6 +75,7 @@
     "export-name": false,
     "ordered-imports": false,
     "no-default-export": false,
+    "no-relative-imports": false,
     "react-this-binding-issue": false,
     "no-backbone-get-set-outside-model": false
   }
