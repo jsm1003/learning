@@ -11,10 +11,10 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    // "allowSyntheticDefaultImports": true, /* This will make some problems in parcel.js. */
+    "allowSyntheticDefaultImports": true,
     "strict": true,
     "strictPropertyInitialization": false
   },
   "exclude": ["node_modules"],
-  "include": ["src/**/*"]
+  "include": ["src/**/*.ts"]
 }
