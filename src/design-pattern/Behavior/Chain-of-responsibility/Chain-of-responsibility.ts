@@ -7,7 +7,7 @@
  */
 // tslint:disable:no-any
 
-export class Chain {
+export default class Chain {
   private readonly mark: string = 'nextProcess';
   // next node in the chain of responsibility
   private next: Chain;

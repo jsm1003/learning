@@ -1,4 +1,4 @@
-import { Chain } from './Chain-of-responsibility';
+import Chain from './Chain-of-responsibility';
 
 /**
  * Demo
