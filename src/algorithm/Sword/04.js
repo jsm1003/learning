@@ -1,53 +1,21 @@
 /**
- * 地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，
- * 每一次只能向左，右，上，下四个方向移动一格，
- * 但是不能进入行坐标和列坐标的数位之和大于k的格子。
- * 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。
- * 但是，它不能进入方格（35,38），因为3+5+3+8 = 19。
- * 请问该机器人能够达到多少个格子？
+ * 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。
+ * 假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
+ * 例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，
+ * 则重建二叉树并返回。
  */
 
-/**
- *
- * @param {Number} threshold k值
- * @param {Number} rows 行数
- * @param {Number} cols 列数
- */
-
-function movingCount(threshold, rows, cols) {
-  let visited = [];
-  for (let i = 0; i < rows; i++) {
-    visited.push([]);
-    for (let j = 0; j < cols; j++) {
-      visited[i][j] = false;
-    }
+function reConstructBinaryTree(pre, vin) {
+  if (pre.length === 0 || vin.length === 0) {
+    return null;
   }
 
-  return moveCount(threshold, rows, cols, 0, 0, visited);
+  let rootVal = pre.shift();
+  let index = vin.indexOf(rootVal);
 
-  function moveCount(threshold, rows, cols, row, col, visited) {
-    if (row < 0 || row === rows || col < 0 || col === cols || visited[row][col]) {
-      return 0;
-    }
-
-    let sum = 0;
-    let temp = `${row}${col}`;
-    for (let i = 0; i < temp.length; i++) {
-      sum += +temp.charAt(i);
-    }
-
-    if (sum > threshold) {
-      return 0;
-    }
-
-    visited[row][col] = true;
-
-    return (
-      1 +
-      moveCount(threshold, rows, cols, row + 1, col, visited) +
-      moveCount(threshold, rows, cols, row - 1, col, visited) +
-      moveCount(threshold, rows, cols, row, col + 1, visited) +
-      moveCount(threshold, rows, cols, row, col - 1, visited)
-    );
-  }
+  return {
+    val: rootVal,
+    left: reConstructBinaryTree(pre, vin.slice(0, index)),
+    right: reConstructBinaryTree(pre, vin.slice(index + 1)),
+  };
 }
