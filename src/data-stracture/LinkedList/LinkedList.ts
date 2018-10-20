@@ -2,7 +2,7 @@
  * Single Linked List
  */
 // tslint:disable:no-any
-class Node {
+export class Node {
   public element: any;
   // tslint:disable-next-line:no-null-keyword
   public next: any = null;
